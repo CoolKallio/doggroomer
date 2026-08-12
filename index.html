@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paws & Polish | Professional Dog Grooming</title>
+    <meta name="description" content="Paws & Polish provides gentle, professional dog grooming with personalised care for every dog.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #f8f5ef;
+            --dark: #252a27;
+            --green: #526b5b;
+            --light-green: #dfe8df;
+            --gold: #c49b63;
+            --white: #ffffff;
+            --grey: #6c726d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(248, 245, 239, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .nav-button {
+            background: var(--green);
+            color: white !important;
+            padding: 11px 18px;
+            border-radius: 50px;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 6% 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 620px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--green);
+            background: var(--light-green);
+            padding: 7px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.7rem);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero p {
+            color: var(--grey);
+            font-size: 1.1rem;
+            max-width: 530px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 23px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: 2px solid var(--green);
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            color: var(--green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--green);
+            color: white;
+        }
+
+        .hero-image {
+            height: 620px;
+            overflow: hidden;
+            border-radius: 35px;
+            position: relative;
+        }
+
+        .hero-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-card {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            padding: 20px;
+            background: rgba(255,255,255,0.93);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+        }
+
+        .hero-card strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .stars {
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 6%;
+        }
+
+        .section-heading {
+            max-width: 650px;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2.3rem, 4vw, 4rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--grey);
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: var(--white);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            padding: 32px;
+            border: 1px solid #e7e4dd;
+            border-radius: 24px;
+            transition: 0.3s;
+            background: var(--white);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 16px;
+            background: var(--light-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--grey);
+            margin-bottom: 20px;
+        }
+
+        .price {
+            color: var(--green);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        /* WHY US */
+
+        .why-us {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .why-image {
+            height: 560px;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .why-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .features {
+            display: grid;
+            gap: 25px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 18px;
+        }
+
+        .feature-number {
+            min-width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--green);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+        }
+
+        .feature h3 {
+            margin-bottom: 5px;
+        }
+
+        .feature p {
+            color: var(--grey);
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            background: var(--dark);
+            color: white;
+        }
+
+        .gallery .section-heading p {
+            color: #b9beb9;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 330px;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .gallery-item img {
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        /* REVIEWS */
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .review {
+            background: white;
+            padding: 30px;
+            border-radius: 24px;
+        }
+
+        .review .stars {
+            margin-bottom: 15px;
+        }
+
+        .review p {
+            color: var(--grey);
+            margin-bottom: 20px;
+        }
+
+        .review strong {
+            display: block;
+        }
+
+        .review small {
+            color: #999;
+        }
+
+        /* BOOKING */
+
+        .booking {
+            background: var(--light-green);
+        }
+
+        .booking-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .booking-info h2 {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .booking-info p {
+            color: var(--grey);
+            margin-bottom: 25px;
+        }
+
+        .contact-details {
+            display: grid;
+            gap: 12px;
+        }
+
+        .contact-details div {
+            font-weight: 600;
+        }
+
+        .booking-form {
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.06);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font: inherit;
+            outline: none;
+            background: white;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--green);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 20px;
+            border: none;
+            background: var(--green);
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 15px;
+            padding: 13px;
+            background: var(--light-green);
+            color: var(--green);
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 6%;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        footer p {
+            color: #aeb3ae;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #c4c8c4;
+        }
+
+        /* SCROLL ANIMATION */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--cream);
+                flex-direction: column;
+                padding: 25px;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero,
+            .why-us,
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-image {
+                height: 500px;
+            }
+
+            .service-grid,
+            .review-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 75px 5%;
+            }
+
+            nav {
+                padding: 16px 5%;
+            }
+
+            .hero {
+                padding: 110px 5% 60px;
+            }
+
+            .hero h1 {
+                font-size: 3.3rem;
+                letter-spacing: -2px;
+            }
+
+            .hero-image {
+                height: 420px;
+            }
+
+            .service-grid,
+            .review-grid,
+            .gallery-grid,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .gallery-item {
+                height: 350px;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="#" class="logo">Paws <span>&</span> Polish</a>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#booking" class="nav-button">Book Now</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content reveal">
+
+            <span class="eyebrow">🐾 Gentle care. Happy dogs.</span>
+
+            <h1>
+                Looking good.<br>
+                <span>Feeling paw-some.</span>
+            </h1>
+
+            <p>
+                Professional dog grooming with a gentle, personalised
+                approach. Because your best friend deserves the very best.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary">
+                    Book an Appointment
+                </a>
+
+                <a href="#services" class="btn btn-secondary">
+                    View Services
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-image reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85"
+                alt="Happy dog after grooming"
+            >
+
+            <div class="hero-card">
+                <strong>⭐ 5.0 from 100+ happy customers</strong>
+                <span class="stars">★★★★★</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">Our Services</span>
+
+            <h2>
+                A little pampering goes a long way.
+            </h2>
+
+            <p>
+                From fresh trims to full grooming packages,
+                every appointment is tailored to your dog's needs.
+            </p>
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card reveal">
+                <div class="service-icon">✂️</div>
+
+                <h3>Full Groom</h3>
+
+                <p>
+                    Bath, blow dry, brush, haircut, nail trim,
+                    ear clean and finishing spray.
+                </p>
+
+                <div class="price">From $75</div>
+            </div>
+
+
+            <div class="service-card reveal">
+                <div class="service-icon">🛁</div>
+
+                <h3>Bath & Blow Dry</h3>
+
+                <p>
+                    A refreshing bath using gentle products,
+                    followed by a professional blow dry.
+                </p>
+
+                <div class="price">From $45</div>
+            </div>
+
+
+            <div class="service-card reveal">
+                <div class="service-icon">🐾</div>
+
+                <h3>Puppy Groom</h3>
+
+                <p>
+                    A gentle introduction to grooming designed
+                    to help puppies feel comfortable.
+                </p>
+
+                <div class="price">From $55</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY US -->
+
+    <section id="why-us">
+
+        <div class="why-us">
+
+            <div class="why-image reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1000&q=85"
+                    alt="Dog enjoying grooming"
+                >
+
+            </div>
+
+            <div>
+
+                <div class="section-heading reveal">
+
+                    <span class="eyebrow">Why Paws & Polish?</span>
+
+                    <h2>
+                        More than a haircut.
+                    </h2>
+
+                    <p>
+                        We believe grooming should be a positive experience
+                        for both dogs and their owners.
+                    </p>
+
+                </div>
+
+                <div class="features">
+
+                    <div class="feature reveal">
+
+                        <div class="feature-number">01</div>
+
+                        <div>
+                            <h3>Gentle handling</h3>
+
+                            <p>
+                                We take our time and treat every dog
+                                with patience and care.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature reveal">
+
+                        <div class="feature-number">02</div>
+
+                        <div>
+                            <h3>Quality products</h3>
+
+                            <p>
+                                We use carefully selected grooming
+                                products suitable for different coats.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature reveal">
+
+                        <div class="feature-number">03</div>
+
+                        <div>
+                            <h3>Personalised grooming</h3>
+
+                            <p>
+                                Every dog has different needs, so
+                                every groom is individually tailored.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section class="gallery" id="gallery">
+
+        <div class="section-heading reveal">
+
+            <span class="eyebrow">Our Gallery</span>
+
+            <h2>Freshly groomed & ready for cuddles.</h2>
+
+            <p>
+                A few of our favourite furry clients.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=85"
+                    alt="Golden retriever"
+                >
+            </div>
+
+        <div class="gallery-item reveal">
+    <img
+        src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=85"
+        alt="Happy dog"
+    >
+</div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=85"
+                    alt="Dog portrait"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=800&q=85"
+                    alt="Happy dog"
+                >
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+
+    <section id="reviews">
+
+        <div class="section-heading reveal">
+
+            <span class="eyebrow">Happy Customers</span>
+
+            <h2>Don't just take our word for it.</h2>
+
+        </div>
+
+
+        <div class="review-grid">
+
+            <div class="review reveal">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Our little Bella came home looking absolutely
+                    gorgeous. She was so relaxed when we picked her up!"
+                </p>
+
+                <strong>Sarah M.</strong>
+                <small>Local Guide</small>
+
+            </div>
+
+
+            <div class="review reveal">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Fantastic service from start to finish.
+                    You can tell they genuinely care about the dogs."
+                </p>
+
+                <strong>James R.</strong>
+                <small>Happy Customer</small>
+
+            </div>
+
+
+            <div class="review reveal">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "We've finally found a groomer our nervous dog
+                    actually enjoys visiting. Highly recommend!"
+                </p>
+
+                <strong>Emily T.</strong>
+                <small>Happy Customer</small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING -->
+
+    <section class="booking" id="booking">
+
+        <div class="booking-container">
+
+            <div class="booking-info reveal">
+
+                <span class="eyebrow">Book Your Visit</span>
+
+                <h2>
+                    Ready for a fresh new look?
+                </h2>
+
+                <p>
+                    Send us a booking request and we'll get back to
+                    you to confirm your appointment.
+                </p>
+
+                <div class="contact-details">
+
+                    <div>📍 123 Example Street, Horsham VIC</div>
+
+                    <div>📞 0400 123 456</div>
+
+                    <div>✉️ hello@pawsandpolish.example</div>
+
+                    <div>🕒 Mon–Sat: 8:00am – 5:00pm</div>
+
+                </div>
+
+            </div>
+
+
+            <form class="booking-form reveal" id="bookingForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="John Smith"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="0400 000 000"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="john@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="dog">
+                            Dog's Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="dog"
+                            name="dog"
+                            placeholder="Buddy"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="service">
+                            Service
+                        </label>
+
+                        <select id="service" name="service" required>
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option>
+                                Full Groom
+                            </option>
+
+                            <option>
+                                Bath & Blow Dry
+                            </option>
+
+                            <option>
+                                Puppy Groom
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            Preferred Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="message">
+                            Anything we should know?
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us about your dog or any special requirements..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Send Booking Request
+                </button>
+
+
+                <div
+                    class="form-message"
+                    id="formMessage"
+                >
+                    ✓ Booking request received! We'll be in touch soon.
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+
+            <strong>Paws & Polish</strong>
+
+            <p>
+                Gentle grooming. Happy dogs.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#booking">Book</a>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        // MOBILE MENU
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+
+        // CLOSE MOBILE MENU WHEN LINK IS CLICKED
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+
+        });
+
+
+        // BOOKING FORM DEMO
+
+        const bookingForm = document.getElementById("bookingForm");
+        const formMessage = document.getElementById("formMessage");
+
+        bookingForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            formMessage.style.display = "block";
+
+            bookingForm.reset();
+
+            setTimeout(() => {
+                formMessage.style.display = "none";
+            }, 6000);
+
+        });
+
+
+        // SCROLL REVEAL ANIMATION
+
+        const observer = new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+        document.querySelectorAll(".reveal").forEach(element => {
+            observer.observe(element);
+        });
+
+
+        // PREVENT USERS FROM SELECTING PAST DATES
+
+        const dateInput = document.getElementById("date");
+
+        const today = new Date();
+
+        const year = today.getFullYear();
+
+        const month = String(today.getMonth() + 1).padStart(2, "0");
+
+        const day = String(today.getDate()).padStart(2, "0");
+
+        dateInput.min = `${year}-${month}-${day}`;
+
+    </script>
+
+</body>
+</html>
